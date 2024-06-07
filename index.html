@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 basketball sneakers</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+<body class="container-main">
+    <header>
+        <h1>Top 10 basketball sneakers</h1>
+
+    </header>
+
+    <div class="container-content">
+                        <article class="content-item">
+                    <div class="photo">
+                        <img src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/d8f71b82-4ebb-4485-8a90-ff518a357aae/ja-1-basketball-shoes-LBlTVt.png" alt="Ja 1 Photo">  
+                    </div>
+                    <div class="split"></div>
+                    <div class="disc">
+                        <h2 class="name">Ja 1</h2>
+                        <p class="category">
+                            <strong >
+                                category: 
+                            </strong>   
+                            traction   
+                        </p>
+                        <p class="price">
+                            <strong>
+                                price:
+                            </strong>
+                            120 $ 
+                        </p>
+                        <p>Ja Morant became the superstar he is today by repeatedly sinking jumpers on crooked rims, jumping on tractor tyres and dribbling through traffic cones in steamy South Carolina summers. TheJa 1 is a testament to his rise. With an Air Zoom unit, it supports bunny hops and hyper speed without sacrificing comfort so that you can control your own destiny on the court, Ja-style./</p>
+                    </div>
+        
+                </article>
+    </div>
+
+
+    <footer>
+        <p>Author: Hazira Yaroslav</p>
+        <p><a href="hazira.yd@gmail.com">hazira.yd@gmail.com</a></p>
+        <p><a href="https://yaroslavhazira.github.io/profile/">https://yaroslavhazira.github.io/profile/</a></p>
+    </footer>
+
+
+
+    <script>
+        // this is my template ...
+
+
+        
+
+        function getTemplate({photo, name, category, price, discription, position}) {
+            const template = `
+                <article class="content-item ${position}">
+                    <div class="photo">
+                        <img src="${photo}" alt="JT 1 Photo">  
+                    </div>
+                    <div class="split"></div>
+                    <div class="disc">
+                        <h2 class="name">${name}</h2>
+                        <p class="category">
+                            <strong >
+                                category: 
+                            </strong>   
+                            ${category}
+                        </p>
+                        <p class="price">
+                            <strong>
+                                price:
+                            </strong>
+                            ${price}
+                        </p>
+                        <p>${discription}</p>
+                    </div>
+        
+                </article>
+                `
+
+            return template;
+        }
+        
+        
+        const result = items.map((item, index) => getTemplate({ ...item, position: index % 2 ? "right" : "left" }))
+
+        document.querySelector(".container-content").innerHTML = result.join(" ");
+        console.log(result.join(" "))
+
+    </script>
+</body> 
+</html>
